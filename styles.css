@@ -265,10 +265,10 @@ body {
 /* //Page Wrapper */
 
 /* Footer CSS */
-footer {
+.footer {
     background-color: var(--color-bg-footer);
     color: var(--color-text);
-    width: 100%;
+    position: relative;
 }
 
 .footer-content {
@@ -313,8 +313,7 @@ footer {
 }
 
 .logo-text {
-    width: 50%;
-    min-width: 20%;
+    max-width: 40%;
     margin: 3% 0% 0% 15%;
 }
 
@@ -347,7 +346,7 @@ footer {
 footer .footer-bottom {
     background-color: var(--color-bg-footer-2);
     color: #ffffff;
-    height: 40px;
+    height: 5vh;
     width: 100%;
     text-align: center;
     bottom: 0px;
@@ -355,12 +354,35 @@ footer .footer-bottom {
     padding: 10px 0px 0px 0px;
 }
 
-@media(min-width:1024px) {
+@media(max-width:1024px) {
     .footer {
         width: fit-content;
     }
+    .logo-text {
+        max-width: 10rem;
+        margin: 3% 0% 0% 15%;
+    }
+    .hermes {
+        max-width: 8rem;
+        margin-left: 5rem;
+        display: block;
+        padding-top: 2vh;
+    }
+    .facebook {
+        max-width: 8rem;
+        margin-left: 5rem;
+        display: block;
+        padding-top: 2vh;
+    }
+    
+    .gruplac {
+        max-width: 8rem;
+        margin-left: 5rem;
+        display: block;
+        padding-top: 2vh;
+    }
     .footer-bottom {
-        width: fit-content;
+        width: 100%;
     }
 }
 
