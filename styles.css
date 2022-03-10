@@ -279,6 +279,66 @@ body {
 
 /* // Cotent boxes */
 
+/* SECTION Integrants */
+
+.professor-section {
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: auto;    
+}
+
+.professor-section .professor-miniboxes {
+    background-color: var(--color-bg-miniboxes);
+    display: flex;
+    margin-top: 10vh;
+    padding: 5vh 5vw;
+}
+
+.professor-section h2, .professor-section p, .professor-contact {
+    padding-left: 3vw;
+    padding-bottom: 3vh;
+    text-align: justify;
+}
+
+.professor-section .professor-img {
+    width: 15vw;
+    padding-top: 20%;
+}
+
+.socials-icons {
+    width: 3vw;
+    margin-left: 3vw;
+    margin-right: 0vw;
+    transition: all 0.3s ease 0s;
+}
+
+.socials-icons:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+@media(max-width:1024px) {
+    .professor-section .professor-miniboxes {
+        display: block;
+        text-align: center;
+    }
+    .professor-section .professor-img {
+        padding-top: 0;
+        min-width: 30vw;
+    }
+    .professor-section ul {
+        list-style: none;
+        text-align: justify;
+    }
+    .socials-icons {
+        min-width: 10%;
+    }
+}
+
+/* SECTION Integrants */
+
 /* SECTION Services */
 
 .services-section-1 {
@@ -325,7 +385,6 @@ body {
         text-align: justify;
     }
 }
-
 
 /* //SECTION Services */
 
