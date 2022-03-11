@@ -47,9 +47,9 @@ body {
 
 .menu-link {
     display: block;
-    padding: 1.8vh;
+    padding: 1.5vh 2.5vw 2.5vh 2.5vw;
     color: var(--color-text-header);
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-decoration: none;
 }
 
@@ -95,6 +95,7 @@ body {
     }
     .menu {
         margin-left: 0;
+        margin-right: 0;
         display: flex;
         position: fixed;
     }
@@ -103,7 +104,6 @@ body {
     }
     .submenu {
         position: absolute;
-        top: 6.5vh;
         width: 20vw;
         overflow: visible;
         z-index: 1000;
@@ -114,12 +114,9 @@ body {
         opacity: 1;
         visibility: visible;
     }
-    .menu-link {
-        padding-top: 1.2em;
-    }
     .logo {
-        max-width: 20vh;
-        margin: 0rem 2rem;
+        max-width: 14vh;
+        margin: 0vh 1vw;
     }
 }
 
@@ -279,7 +276,67 @@ body {
 
 /* // Cotent boxes */
 
+/* SECTION Research */
+
+.research-section-1 {
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: auto;
+}
+
+.research-section-1 .research-miniboxes {
+    background-color: var(--color-bg-miniboxes);
+    display: flex;
+    margin-top: 10vh;
+    padding: 5vh 5vw;
+}
+
+.research-section-1 h2 {
+    padding-left: 5vw;
+    padding-bottom: 3vh;
+}
+
+.research-section-1 p {
+    padding: 0 10vw;
+    text-align: justify;
+}
+
+.research-section-1 .research-img {
+    width: 20vw;
+}
+
+.research-img-block {
+    display: block;
+}
+
+@media(max-width:1024px) {
+    .research-section-1 .research-miniboxes {
+        display: block;
+        text-align: center;
+    }
+    .research-img-block{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .research-section-1 .research-img {
+        min-width: 35vw;
+    }
+    .research-section-1 h2 {
+        padding-top: 3vh;
+    }
+    .research-section-1 p {
+        padding-top: 1vh;
+        text-align: justify;
+    }
+}
+
+/* // SECTION Research */
+
 /* SECTION Integrants */
+
+    /* Professor */
 
 .professor-section {
     background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
@@ -328,12 +385,106 @@ body {
         padding-top: 0;
         min-width: 30vw;
     }
-    .professor-section ul {
-        list-style: none;
-        text-align: justify;
+    .socials-icons {
+        min-width: 10%;
+    }
+}
+
+    /* Active students */
+
+.student-section {
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: auto;    
+}
+
+.student-section .student-miniboxes {
+    background-color: var(--color-bg-miniboxes);
+    margin-top: 5vh;
+    padding: 5vh 5vw;
+}
+
+.student-section .student-miniboxes-top {
+    display: flex;
+}
+
+.student-section .student-miniboxes-bottom {
+    display: flex;
+}
+
+.student-images-personal-work .student-work-1 {
+    width: 15vw;
+    height: 25vh;
+    padding-left: 5%;
+    margin-top: 5vh;
+}
+
+.student-images-personal-work .student-work-2 {
+    width: 23vw;
+    height: 25vh;
+    padding-left: 5%;
+    margin-top: 5vh;
+}
+
+.student-slicebox {
+    background-color: var(--color-green);
+    margin-top: 5vh;
+    color: var(--color-text-header);
+    padding: 2vh 5vw;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.student-section h2, .student-section h3, .student-section p, .student-contact {
+    padding-left: 3vw;
+    padding-bottom: 3vh;
+    text-align: justify;
+}
+
+.student-section .student-img {
+    width: 20vw;
+    padding-top: 20%;
+}
+
+.student-icons {
+    width: 3vw;
+    margin-left: 3vw;
+    margin-right: 0vw;
+    transition: all 0.3s ease 0s;
+}
+
+.student-icons:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+@media(max-width:1024px) {
+    .student-section .student-miniboxes-top {
+        display: block;
+        text-align: center;
+    }
+    .student-section .student-miniboxes-bottom {
+        display: block;
+    }
+    .student-section h2 {
+        text-align: center;
+    }
+    .student-section .student-img {
+        padding-top: 0;
+        min-width: 30vw;
     }
     .socials-icons {
         min-width: 10%;
+    }
+    .student-images-personal-work .student-work-1 {
+        width: 50%;
+        margin-top: 2vh;
+    }
+    .student-images-personal-work .student-work-2 {
+        width: 60%;
+        margin-top: 2vh;
     }
 }
 
