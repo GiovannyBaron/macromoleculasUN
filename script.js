@@ -20,3 +20,34 @@ for(let i=0; i<subMenubtn.length; i++) {
         }
     });
 }
+
+const carousel = document.querySelector(".carousel-items");
+
+let maxscrollLeft = carousel.scrollWidth - carousel.clientWidth;
+let interval = null;
+let step = 5;
+
+const start = () => {
+    interval = setInterval(function(){
+        carousel.scrollLeft = carousel.scrollLeft + step;
+        if (carousel.scrollLeft === maxscrollLeft) {
+          step = step * -1;
+        } else if (carousel.scrollLeft === 0) {
+          step = step * -1;
+        }
+      }, 10);
+    };
+
+const stop = () => {
+    clearInterval(interval);
+};
+
+carousel.addEventListener('mouseover', () => {
+    stop();
+});
+
+carousel.addEventListener('mouseout', () => {
+    start();
+});
+
+start();

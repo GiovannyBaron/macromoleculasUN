@@ -1,5 +1,6 @@
-body {
+html, body {
     box-sizing: border-box;
+    width: 100%;
     height: 100%;
     padding: 0px;
     margin: 0px;
@@ -133,15 +134,15 @@ body {
     box-sizing: border-box;
 }
 
-.home {
-    width: 100%;
-}
-
 .box {
     width: 100%;
     height: auto;
     padding: 5vh 5vw;
     font-size: 1.5em;
+}
+
+.home li {
+    width: 80%;
 }
 
 @media(max-width:1024px) {
@@ -160,103 +161,48 @@ body {
 }
 
 .section-0 h1 {
-    text-align: center;
     color: var(--color-text-1);
     background-color: var(--color-green-2);
-    margin: 7vh 5vw 7vh 5vw;
+    margin: 0vh 5vw 7vh 5vw;
     padding: 2vh 0;
 }
-
-.auto-slider img{
-    display:block;
-    width: 40vw;
+  
+.carousel {
     height: 50vh;
-    object-fit:fill;
+    display: flex;
+    align-items: center;
 }
 
-.auto-slider{
-    width: 80vw;
-    height:auto;
-    margin-left: 5vw;
+.carousel-items {
+    display: flex;
     overflow-x:hidden;
+    overflow-y: hidden;
+    padding: 10vh 0;
 }
-  
-.auto-slider-content{
-    list-style:none;
-    display:flex;
-    animation-name: slide;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    animation-timing-function:ease-in-out;
+
+.carousel-item {
+    width: 40vw;
+    height: 60vh;
 }
-  
-@keyframes slide{
-    0%, 10% {
-        transform:translateX(0);
-    }
-    15%, 30%{
-        transform:translateX(-80vw);
-    }
-    35%, 50%{
-        transform:translateX(-160vw);
-    }
-    55%, 70%{
-        transform:translateX(-240vw);
-    }
-    75%, 90%{
-        transform:translateX(-320vw);
-    }
-    95%, 100%{
-        transform:translateX(0);
-    }
+
+.carousel-item img {
+    width: 40vw;
+    height: 60vh;
+    object-fit:cover;
+}
+
+.carousel-item:hover {
+    transform: scale(1.2);
 }
 
 @media(max-width:1024px) {
-    .auto-slider img{
-        width: 90vw;
-        height:70vw;
+    .carousel-item {
+        width: 70vw;
+        height: 50vh;
     }
-    .auto-slider{
-        width: 90vw;
-        margin: auto;
-    }
-    .auto-slider-content {
-        animation-duration: 60s;
-    }
-    @keyframes slide{
-        0%, 9%{
-            transform:translateX(0);
-        }
-        9%, 18%{
-            transform:translateX(-90vw);
-        }
-        18%, 27%{
-            transform:translateX(-180vw);
-        }
-        27%, 36%{
-            transform:translateX(-270vw);
-        }
-        36%, 45%{
-            transform:translateX(-360vw);
-        }
-        45%, 54%{
-            transform:translateX(-450vw);
-        }
-        54%, 63%{
-            transform:translateX(-540vw);
-        }
-        63%, 72%{
-            transform:translateX(-630vw);
-        }
-        72%, 81%{
-            transform:translateX(-720vw);
-        }
-        81%, 90%{
-            transform:translateX(-810vw);
-        }
-        90%, 99%{
-            transform:translateX(-0);
-        }
+    .carousel-item img {
+        width: 70vw;
+        height: 50vh;
     }
 }
 
@@ -278,8 +224,7 @@ body {
 }
 
 .section-1 .bg-box1 h1 {
-    padding: 0vh 5vh 2vh 5vh;
-
+    margin: auto;
 }
 
 .section-1 .bg-box1 ol {
@@ -344,7 +289,7 @@ body {
         text-align: center;
     }
     .macro1, .macro2, .macro3 {
-        max-width: 100%;
+        max-width: 80%;
     }
 }
         /* //News of Makro */
@@ -397,14 +342,17 @@ body {
 }
 
 .bg-box3 .UNMap, .bg-box3 .department {
-    width: 50vw;
-    height: 70vh;
+    width: 40vw;
+    height: auto;
 }
 
 @media(max-width:1024px) {
+    .section-4 .bg-box3 {
+        display: block;
+    }
     .bg-box3 .UNMap, .bg-box3 .department {
-        max-width: 40vw;
-        max-height: 60vh;
+        min-width: 80%;
+        max-height: auto;
     }
 }
 
@@ -928,7 +876,6 @@ body {
 }
 
 .footer-section ul {
-    font-size: 1.3em;
     margin-left: 20%;
     text-decoration: none;
 }
@@ -958,21 +905,7 @@ body {
     transition: all 0.6s ease 0s;
 }
 
-.hermes {
-    max-width: 30%;
-    margin-left: 11vw;
-    display: block;
-    padding-top: 2vh;
-}
-
-.facebook {
-    max-width: 30%;
-    margin-left: 11vw;
-    display: block;
-    padding-top: 2vh;
-}
-
-.gruplac {
+.hermes, .facebook, .gruplac {
     max-width: 30%;
     margin-left: 11vw;
     display: block;
@@ -1004,8 +937,11 @@ footer .footer-bottom {
         display: block;
         padding-top: 2vh;
     }
-    .footer-bottom {
-        width: 100%;
+    .footer-bottom  {
+        font-size: 0.6em;
+    }
+    .footer-section p, .footer-section .contact {
+        font-size: 0.8em;
     }
 }
 
