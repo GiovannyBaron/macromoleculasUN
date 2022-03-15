@@ -25,18 +25,18 @@ const carousel = document.querySelector(".carousel-items");
 
 let maxscrollLeft = carousel.scrollWidth - carousel.clientWidth;
 let interval = null;
-let step = 5;
+let step = 10;
 
 const start = () => {
-    interval = setInterval(function(){
-        carousel.scrollLeft = carousel.scrollLeft + step;
-        if (carousel.scrollLeft === maxscrollLeft) {
-          step = step * -1;
-        } else if (carousel.scrollLeft === 0) {
-          step = step * -1;
-        }
-      }, 10);
-    };
+    interval = setInterval(function() {
+    carousel.scrollLeft = carousel.scrollLeft + step;
+    if(carousel.scrollLeft === maxscrollLeft) {
+        step = step * -1;
+    } else if (carousel.scrollLeft === 0) {
+        step = step * -1;
+    }
+    }, 10);
+};
 
 const stop = () => {
     clearInterval(interval);
