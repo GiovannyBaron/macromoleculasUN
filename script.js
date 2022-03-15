@@ -25,15 +25,15 @@ const carousel = document.querySelector(".carousel-items");
 
 let maxscrollLeft = carousel.scrollWidth - carousel.clientWidth;
 let interval = null;
-let step = 10;
+let step = 2;
 
 const start = () => {
     interval = setInterval(function() {
     carousel.scrollLeft = carousel.scrollLeft + step;
     if(carousel.scrollLeft === maxscrollLeft) {
-        step = step * -1;
+        step = step * -10;
     } else if (carousel.scrollLeft === 0) {
-        step = step * -1;
+        step = 2;
     }
     }, 10);
 };

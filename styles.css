@@ -176,7 +176,7 @@ html, body {
 
 .carousel-items {
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden;
     padding: 3vh 0vw;
 }
@@ -195,6 +195,24 @@ html, body {
 
 .carousel-item:hover {
     transform: scale(1.2);
+}
+
+@media(max-width:1024px) {
+    .carousel-items {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin: 0vh 3vw;
+    }
+    .carousel-item {
+        min-width: 80vw;
+        max-width: 80vw;
+        height: 40vh;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
     /* // Slideshow section */
