@@ -8,16 +8,19 @@ body {
 
 :root {
     --color-green: #008081;
+    --color-green-2: #0081815e;
     --color-text: #000000;
     --color-text-2: #584646;
+    --color-text-3: #f3c74f;
+    --color-text-white: #eceef3;
     --color-text-header: #E1E2E6;
     --color-bg-header: #8a8383;
     --color-bg-header-2: #474444c4;
     --color-bg-submenu: #838282;
     --color-text-miniboxes: #242020;
-    --color-bg-footer: #66666675;
+    --color-bg-footer: #858383b6;
     --color-bg-footer-2: #444444;
-    --color-bg-miniboxes: #ffffff7c;
+    --color-bg-miniboxes: #ffffffc9;
 }
 
 /* Nav Bar */
@@ -131,18 +134,136 @@ body {
 }
 
 .home {
-    width: fit-content;
+    width: 100%;
 }
 
 .box {
     width: 100%;
-    height: 50vh;
+    height: auto;
     padding: 5vh 5vw;
     font-size: 1.5em;
 }
 
+@media(max-width:1024px) {
+    .box {
+        padding: 5vh 0;
+    }
+}
+
+    /* Slideshow section */
+
+.section-0 {
+    margin-top: 2vh;
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.8)), url(imagenes/backgroundmakro1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.section-0 h1 {
+    text-align: center;
+    color: var(--color-text-1);
+    background-color: var(--color-green-2);
+    margin: 7vh 5vw 7vh 5vw;
+    padding: 2vh 0;
+}
+
+.auto-slider img{
+    display:block;
+    width: 40vw;
+    height: 50vh;
+    object-fit:fill;
+}
+
+.auto-slider{
+    width: 80vw;
+    height:auto;
+    margin-left: 5vw;
+    overflow-x:hidden;
+}
+  
+.auto-slider-content{
+    list-style:none;
+    display:flex;
+    animation-name: slide;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+}
+  
+@keyframes slide{
+    0%, 10% {
+        transform:translateX(0);
+    }
+    15%, 30%{
+        transform:translateX(-80vw);
+    }
+    35%, 50%{
+        transform:translateX(-160vw);
+    }
+    55%, 70%{
+        transform:translateX(-240vw);
+    }
+    75%, 90%{
+        transform:translateX(-320vw);
+    }
+    95%, 100%{
+        transform:translateX(0);
+    }
+}
+
+@media(max-width:1024px) {
+    .auto-slider img{
+        width: 90vw;
+        height:70vw;
+    }
+    .auto-slider{
+        width: 90vw;
+        margin: auto;
+    }
+    .auto-slider-content {
+        animation-duration: 60s;
+    }
+    @keyframes slide{
+        0%, 9%{
+            transform:translateX(0);
+        }
+        9%, 18%{
+            transform:translateX(-90vw);
+        }
+        18%, 27%{
+            transform:translateX(-180vw);
+        }
+        27%, 36%{
+            transform:translateX(-270vw);
+        }
+        36%, 45%{
+            transform:translateX(-360vw);
+        }
+        45%, 54%{
+            transform:translateX(-450vw);
+        }
+        54%, 63%{
+            transform:translateX(-540vw);
+        }
+        63%, 72%{
+            transform:translateX(-630vw);
+        }
+        72%, 81%{
+            transform:translateX(-720vw);
+        }
+        81%, 90%{
+            transform:translateX(-810vw);
+        }
+        90%, 99%{
+            transform:translateX(-0);
+        }
+    }
+}
+
+    /* // Slideshow section */
+
 .section-1 {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255, 255, 255, 0.1)), url(imagenes/backgroundmakro1.jpg);
     background-attachment: fixed;
     background-size: cover;
     height: auto;
@@ -154,7 +275,6 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 10vh;
 }
 
 .section-1 .bg-box1 h1 {
@@ -189,7 +309,7 @@ body {
         /* News of Makro */
 
 .section-2 {
-    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255, 255, 255, 0.7)), url(imagenes/blanco-bg.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.5)), url(imagenes/blanco-bg.jpg);
     background-size:contain;
     height: auto;
 }
@@ -232,9 +352,10 @@ body {
         /* Mision and vision*/
 
 .section-3 {
-    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.5)), url(imagenes/background-macro.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.5)), url(imagenes/backgroundmakro3.jpg);
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     height: auto;
 }
 
@@ -252,36 +373,52 @@ body {
 .bg-box2 p {
     margin: 0vh 5vw;
 }
+
         /* //Mision and vision */
 
         /* Map */
+
 .section-4 {
-    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.5)), url(imagenes/background-macro.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.5)), url(imagenes/backgroundmakro3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     height: auto;
 }
 
 .section-4 .bg-box3 {
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
-.bg-box3 h2 {
-    padding-bottom: 3vh;
+.section-4 h2 {
+    padding-bottom: 2vh;
 }
 
-.bg-box3 .UNMap {
-    max-width: 100%;
+.bg-box3 .UNMap, .bg-box3 .department {
+    width: 50vw;
+    height: 70vh;
 }
+
+@media(max-width:1024px) {
+    .bg-box3 .UNMap, .bg-box3 .department {
+        max-width: 40vw;
+        max-height: 60vh;
+    }
+}
+
         /* // Map */
-
 
 /* // Cotent boxes */
 
 /* SECTION Research */
 
 .research-section-1 {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/backgroundmakro2.jpg);
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     height: auto;
 }
 
@@ -339,9 +476,10 @@ body {
     /* Professor */
 
 .professor-section {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/backgroundmakro4.jpg);
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     height: auto;    
 }
 
@@ -383,48 +521,35 @@ body {
     }
     .professor-section .professor-img {
         padding-top: 0;
-        min-width: 30vw;
+        min-width: 50vw;
     }
     .socials-icons {
-        min-width: 10%;
+        min-width: 3em;
     }
 }
 
     /* Active students */
 
 .student-section {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/backgroundmakro5.jpg);
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     height: auto;    
 }
 
 .student-section .student-miniboxes {
     background-color: var(--color-bg-miniboxes);
     margin-top: 5vh;
-    padding: 5vh 5vw;
+}
+
+.student-miniboxes h1, h2, h3, p {
+    width: 90%;
 }
 
 .student-section .student-miniboxes-top {
     display: flex;
-}
-
-.student-section .student-miniboxes-bottom {
-    display: flex;
-}
-
-.student-images-personal-work .student-work-1 {
-    width: 15vw;
-    height: 25vh;
-    padding-left: 5%;
-    margin-top: 5vh;
-}
-
-.student-images-personal-work .student-work-2 {
-    width: 23vw;
-    height: 25vh;
-    padding-left: 5%;
-    margin-top: 5vh;
+    margin: 0 2vw;
 }
 
 .student-slicebox {
@@ -437,6 +562,7 @@ body {
 }
 
 .student-section h2, .student-section h3, .student-section p, .student-contact {
+    padding: 2vh 0 3vh 3vw;
     padding-left: 3vw;
     padding-bottom: 3vh;
     text-align: justify;
@@ -447,18 +573,84 @@ body {
     padding-top: 20%;
 }
 
-.student-icons {
-    width: 3vw;
-    margin-left: 3vw;
-    margin-right: 0vw;
+.student-bottom {
+    display: flex;
+    height: auto;
+}
+
+.student-socials {
+    margin-right: 15vw;
+}
+
+.student-socials-icons {
+    display: block;
+    width: 6vw;
+    margin: 4vh 1vw;
     transition: all 0.3s ease 0s;
 }
 
-.student-icons:hover {
+.student-socials-icons:hover {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
+
+.students-work-1 {
+    display:flex;
+    max-width: 30vw;
+    max-height: 30vh;
+    margin-left: 5vw;
+    margin-bottom: 2vh;
+}
+
+    /* Students Carousel */
+
+.students-auto-slider img{
+    display:block;
+    width: 30vw;
+    height: 40vh;
+    object-fit:fill;
+    margin-bottom: 2vh;
+}
+
+.students-auto-slider{
+    width: 30vw;
+    height:auto;
+    overflow-x:hidden;
+    margin-left: 1vw;
+}
+    
+.students-auto-slider-content{
+    list-style:none;
+    display:flex;
+    animation-name: slide2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+}
+    
+@keyframes slide2{
+    0%, 10% {
+        transform:translateX(0);
+    }
+    15%, 30%{
+        transform:translateX(-30vw);
+    }
+    35%, 50%{
+        transform:translateX(-60vw);
+    }
+    55%, 70%{
+        transform:translateX(-90vw);
+    }
+    75%, 90%{
+        transform:translateX(-120vw);
+    }
+    95%, 100%{
+        transform:translateX(0);
+    }
+}
+
+    /* // Students Carousel */
 
 @media(max-width:1024px) {
     .student-section .student-miniboxes-top {
@@ -473,27 +665,131 @@ body {
     }
     .student-section .student-img {
         padding-top: 0;
-        min-width: 30vw;
+        min-width: 50vw;
     }
-    .socials-icons {
-        min-width: 10%;
+    .student-bottom {
+        display: block;
+        margin: auto;
     }
-    .student-images-personal-work .student-work-1 {
-        width: 50%;
-        margin-top: 2vh;
+    .student-socials {
+        display: flex;
+        justify-content: center;
     }
-    .student-images-personal-work .student-work-2 {
-        width: 60%;
-        margin-top: 2vh;
+    .student-socials-icons {
+        min-width: 10vw;
+    }
+    .students-auto-slider {
+        margin: auto;
+        min-width: 60vw;
+    }
+    .students-auto-slider img {
+        min-width: 60vw;
+        height: auto;
+    }
+    .students-work-1 {
+        margin: auto;
+        min-width: 80vw;
+    }
+    @keyframes slide2{
+        0%, 10% {
+            transform:translateX(0);
+        }
+        15%, 30%{
+            transform:translateX(-60vw);
+        }
+        35%, 50%{
+            transform:translateX(-120vw);
+        }
+        55%, 70%{
+            transform:translateX(-180vw);
+        }
+        75%, 90%{
+            transform:translateX(-240vw);
+        }
+        95%, 100%{
+            transform:translateX(0);
+        }
     }
 }
 
-/* SECTION Integrants */
+    /* Ex-makro students */
+
+.exmakro-section {
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/backgroundmakro4.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: auto;    
+}
+
+.exmakro-section .exmakro-miniboxes {
+    display: flex;
+    padding: 5vh 5vw;
+}
+
+.exmakro-flex {
+    background-color: var(--color-bg-miniboxes);
+    display: flex;
+    margin-right: 2em;
+    text-align: center; 
+    width: 100%;
+}
+
+.exmakro-section h2, .exmakro-section p, .exmakro-contact {
+    padding: 0 3vw;
+    padding-bottom: 3vh;
+    text-align: justify;
+}
+
+.exmakro-section .exmakro-img {
+    width: 20vw;
+    height: auto;
+    padding: 1vh 0;
+}
+
+.exmakro-socials-icons {
+    width: 5vw;
+    margin: 0 0 1em 1em;
+    transition: all 0.3s ease 0s;
+}
+
+.exmakro-socials-icons:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.exmakro-section .exmakro-studies {
+    padding: 0 3vw;
+    font-size: 0.9em;
+}
+
+@media(max-width:1024px) {
+    .exmakro-section .exmakro-miniboxes {
+        display: block;
+        text-align: center;
+    }
+    .exmakro-section .exmakro-img {
+        min-width: 15em;
+        text-align: center;
+    }
+    .exmakro-socials-icons {
+        width: 10vw;
+        margin: 0 0 2vh 3vw;
+    }
+}
+    
+
+    /* Ex-makro students */
+
+
+/* // SECTION Integrants */
+
 
 /* SECTION Services */
 
 .services-section-1 {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/background-macro.jpg);
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/backgroundmakro3.jpg);
     background-attachment: fixed;
     background-size: cover;
     height: auto;
@@ -520,7 +816,7 @@ body {
 }
 
 .services-section-1 .services-img {
-    width: 30vw;
+    width: 50vw;
 }
 
 @media(max-width:1024px) {
@@ -529,7 +825,7 @@ body {
         text-align: center;
     }
     .services-section-1 .services-img {
-        min-width: 50vw;
+        min-width: 80vw;
     }
     .services-section-1 ul {
         list-style: none;
@@ -538,6 +834,75 @@ body {
 }
 
 /* //SECTION Services */
+
+/* //SECTION Contact */
+
+.contact-section {
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255, 255, 255, 0.2)), url(imagenes/backgroundmakro2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: auto;    
+}
+
+.contact-section .contact-miniboxes {
+    background-color: var(--color-bg-miniboxes);
+    display: flex;
+    margin-top: 10vh;
+    padding: 5vh 5vw;
+}
+
+.contact-section h2, .contact-section p, .contact-contact {
+    padding-left: 3vw;
+    padding-bottom: 3vh;
+    text-align: justify;
+}
+
+.contact-flex, .contact-flex h2 {
+    text-align: center;
+}
+
+.contact-section .contact-img-labs {
+    width: 35vw;
+}
+
+.contact-section .contact-img {
+    width: 15vw;
+    padding-top: 20%;
+}
+
+.socials-icons {
+    width: 3vw;
+    margin-left: 3vw;
+    margin-right: 0vw;
+    transition: all 0.3s ease 0s;
+}
+
+.socials-icons:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+@media(max-width:1024px) {
+    .contact-section .contact-miniboxes {
+        display: block;
+        text-align: center;
+    }
+    .contact-section .contact-img {
+        padding-top: 0;
+        min-width: 50vw;
+    }
+    .socials-icons {
+        min-width: 3em;
+    }
+    .contact-section .contact-img-labs {
+        min-width: 80vw;
+    }
+}
+
+/* //SECTION Cotact */
+
 
 /* Footer CSS */
 .footer {

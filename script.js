@@ -3,7 +3,6 @@ const menu = document.querySelector("#menu");
 btnMenu.addEventListener("click", function(){
     menu.classList.toggle("mostrar");
 });
-
 const subMenubtn = document.querySelectorAll(".submenu-btn");
 for(let i=0; i<subMenubtn.length; i++) {
     subMenubtn[i].addEventListener("click", function(){
