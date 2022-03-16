@@ -141,6 +141,10 @@ html, body {
     font-size: 1.5em;
 }
 
+.home {
+    font-size: smaller;
+}
+
 .home li {
     width: 80%;
 }
@@ -235,8 +239,9 @@ html, body {
     flex-direction: column;
 }
 
-.section-1 .bg-box1 h1 {
+.section-1 .bg-box1 h2 {
     margin: auto;
+    padding-bottom: 2vh;
 }
 
 .section-1 .bg-box1 ol {
