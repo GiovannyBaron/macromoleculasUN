@@ -21,19 +21,19 @@ for(let i=0; i<subMenubtn.length; i++) {
     });
 }
 
-const carousel = document.querySelector(".carousel-items");
+const carousels = document.querySelectorAll(".carousel-items");
 
-let maxscrollLeft = carousel.scrollWidth - carousel.clientWidth;
+const maxscrollLeft = carousel => carousel.scrollWidth - carousel.clientWidth;
 let interval = null;
-let step = 1;
+let step = 2;
 
-const start = () => {
+const start = carousel => {
     interval = setInterval(function() {
     carousel.scrollLeft = carousel.scrollLeft + step;
-    if(carousel.scrollLeft === maxscrollLeft) {
-        step = step * -20;
+    if(carousel.scrollLeft === maxscrollLeft(carousel)) {
+        step = step * -1;
     } else if (carousel.scrollLeft === 0) {
-        step = 1;
+        step = step * -1;
     }
     }, 10);
 };
@@ -42,12 +42,16 @@ const stop = () => {
     clearInterval(interval);
 };
 
-carousel.addEventListener('mouseover', () => {
-    stop();
-});
+carousels.forEach(carousel => {
+    carousel.addEventListener('mouseover', () => {
+        stop();
+    });
+    
+    carousel.addEventListener('mouseout', () => {
+        start(carousel);
+    });
 
-carousel.addEventListener('mouseout', () => {
-    start();
+    start(carousel);
 });
 
 start();

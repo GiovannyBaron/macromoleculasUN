@@ -142,7 +142,13 @@ html, body {
 }
 
 .home {
-    font-size: smaller;
+    font-size: 0.8em;
+}
+
+@media(max-width:600px) {
+    .home{
+        font-size: 0.6em;
+    }
 }
 
 .home li {
